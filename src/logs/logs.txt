@@ -7,3 +7,36 @@
 ====================ERROR 26/9/2023, 20:58:26=========================
 {"expose":true,"statusCode":400,"status":400,"body":"{\n    \"email\": \"ian.rosas6@academlo.com\",\n}","type":"entity.parse.failed"}
 
+====================ERROR 3/10/2023, 7:27:56 p. m.=========================
+{"name":"SequelizeDatabaseError","parent":{"length":354,"name":"error","severity":"ERROR","code":"23502","detail":"La fila que falla contiene (1, null, https://cdn.icon-icons.com/icons2/1760/PNG/512/4105943-accounts-..., single, null, 2023-10-04 00:27:55.57+00).","schema":"public","table":"Conversations","column":"createdBy","file":"execmain.c","line":"1974","routine":"ExecConstraints","sql":"INSERT INTO \"Conversations\" (\"id\",\"createdAt\") VALUES (DEFAULT,$1) RETURNING \"id\",\"title\",\"conversationImage\",\"type\",\"createdBy\",\"createdAt\";","parameters":["2023-10-04 00:27:55.570 +00:00"]},"original":{"length":354,"name":"error","severity":"ERROR","code":"23502","detail":"La fila que falla contiene (1, null, https://cdn.icon-icons.com/icons2/1760/PNG/512/4105943-accounts-..., single, null, 2023-10-04 00:27:55.57+00).","schema":"public","table":"Conversations","column":"createdBy","file":"execmain.c","line":"1974","routine":"ExecConstraints","sql":"INSERT INTO \"Conversations\" (\"id\",\"createdAt\") VALUES (DEFAULT,$1) RETURNING \"id\",\"title\",\"conversationImage\",\"type\",\"createdBy\",\"createdAt\";","parameters":["2023-10-04 00:27:55.570 +00:00"]},"sql":"INSERT INTO \"Conversations\" (\"id\",\"createdAt\") VALUES (DEFAULT,$1) RETURNING \"id\",\"title\",\"conversationImage\",\"type\",\"createdBy\",\"createdAt\";","parameters":["2023-10-04 00:27:55.570 +00:00"]}
+
+====================ERROR 3/10/2023, 10:30:58 p. m.=========================
+{}
+
+====================ERROR 4/10/2023, 9:30:26 p. m.=========================
+{"status":401,"error":"Email verification needed","message":"Look at your email messages for a verification email"}
+
+====================ERROR 4/10/2023, 9:32:07 p. m.=========================
+{"name":"JsonWebTokenError","message":"jwt malformed"}
+
+====================ERROR 4/10/2023, 9:32:07 p. m.=========================
+{"name":"JsonWebTokenError","message":"jwt malformed"}
+
+====================ERROR 4/10/2023, 9:32:07 p. m.=========================
+====================ERROR 4/10/2023, 9:32:07 p. m.=========================
+{"name":"JsonWebTokenError","message":"jwt malformed"}
+
+{"name":"JsonWebTokenError","message":"jwt malformed"}
+
+{"status":401,"message":"No authorization header"}
+
+====================ERROR 4/10/2023, 9:49:04 p. m.=========================
+{"status":401,"message":"No authorization header"}
+
+====================ERROR 4/10/2023, 10:03:02 p. m.=========================
+====================ERROR 4/10/2023, 10:03:16 p. m.=========================
+{"status":401,"message":"No authorization header"}
+
+====================ERROR 4/10/2023, 10:03:18 p. m.=========================
+{"status":401,"message":"No authorization header"}
+

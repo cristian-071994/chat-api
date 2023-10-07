@@ -4,6 +4,19 @@ const jwt = require("jsonwebtoken");
 const { signAuthToken } = require("../../helpers/signToken");
 require("dotenv").config();
 
+const getAllUsers = async (req, res, next) => {
+  try {
+    const users = await User.findAll({
+      attributes: {
+        exclude: ["password"],
+      },
+    });
+    res.json(users);
+  } catch (error) {
+    next(error);
+  }
+};
+
 const registerUser = async (req, res, next) => {
   try {
     const newUser = req.body;
@@ -89,6 +102,7 @@ module.exports = {
   registerUser,
   loginUser,
   validateUserEmail,
+  getAllUsers,
 };
 
 // 1.- Enviar un correo electronico a la direccion que nos dieron (link)
