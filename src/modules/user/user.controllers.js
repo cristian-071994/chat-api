@@ -98,11 +98,25 @@ const validateUserEmail = async (req, res, next) => {
   }
 };
 
+const uploadAvatar = async (req, res, next) => {
+  try {
+    const { file } = req;
+    const { id } = req.params;
+    // construir una URL para la imagen
+    const imageUrl = `${process.env.APP_URL}/avatar/${file.filename}`;
+    await User.update({ avatar: imageUrl }, { where: { id } });
+    res.status(204).end();
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   registerUser,
   loginUser,
   validateUserEmail,
   getAllUsers,
+  uploadAvatar,
 };
 
 // 1.- Enviar un correo electronico a la direccion que nos dieron (link)

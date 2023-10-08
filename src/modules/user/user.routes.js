@@ -5,9 +5,11 @@ const {
   loginUser,
   validateUserEmail,
   getAllUsers,
+  uploadAvatar,
 } = require("./user.controllers");
 const authenticate = require("../../middlewares/auth.middleware");
 const { registerUserValidator, loginValidatior } = require("./user.validators");
+const upload = require("../../middlewares/imageUpload.middleware");
 const router = Router();
 
 router
@@ -27,6 +29,8 @@ router
       next(error);
     }
   });
+
+router.put("/:id", authenticate, upload.single("avatar"), uploadAvatar);
 
 router.post("/login", loginValidatior, loginUser);
 
