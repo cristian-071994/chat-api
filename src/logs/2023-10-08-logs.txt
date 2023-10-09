@@ -1,0 +1,24 @@
+====================ERROR 8/10/2023, 8:43:15 p. m.=========================
+req: POST /api/v1/conversations body: {"userId":1,"participantId":"hola"} 
+res: status: 400, {"error":"Invalid data","message":["El id del participante debe ser un numero entero"]}
+
+req: POST /api/v1/conversations body: {"userId":"","participantId":8} 
+res: status: 400, {"error":"Invalid data","message":["El id del usuario no debe estar vacio","El id del usuario debe ser un numero entero"]}
+
+====================ERROR 8/10/2023, 8:45:37 p. m.=========================
+====================ERROR 8/10/2023, 8:57:56 p. m.=========================
+req: POST /api/v1/messages/conversation/1 body: {"content":"","senderId":1} 
+res: status: 400, {"error":"Invalid data","message":["No puedes enviar un mensaje vacio"]}
+
+====================ERROR 8/10/2023, 8:58:19 p. m.=========================
+req: POST /api/v1/messages/conversation/1 body: {} 
+res: status: 400, {"expose":true,"statusCode":400,"body":"{\r\n    \"content\": \"okis\",\r\n    \"senderId\": \r\n}","type":"entity.parse.failed"}
+
+====================ERROR 8/10/2023, 8:58:31 p. m.=========================
+req: POST /api/v1/messages/conversation/1 body: {"content":"okis","senderId":""} 
+res: status: 400, {"error":"Invalid data","message":["El senderId no debe estar ","El valor de la propiedad senderId debe ser numero entero"]}
+
+req: POST /api/v1/messages/conversation/1 body: {"content":"okis","senderId":1} 
+res: status: undefined, {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-06T03:25:41.000Z"}
+
+====================ERROR 8/10/2023, 8:59:29 p. m.=========================

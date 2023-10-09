@@ -5,6 +5,10 @@ const {
   getAllConversations,
 } = require("./conversations.controllers");
 const authenticate = require("../../middlewares/auth.middleware");
+const {
+  createConversationValidator,
+  createGroupConversationValidatior,
+} = require("./conversations.validator");
 
 const router = Router();
 
@@ -14,8 +18,13 @@ const router = Router();
 
 //* /api/v1/conversations/
 
-router.post("/", authenticate, createConversation);
-router.post("/group", authenticate, createGroupConversation);
+router.post("/", createConversationValidator, authenticate, createConversation);
+router.post(
+  "/group",
+  createGroupConversationValidatior,
+  authenticate,
+  createGroupConversation
+);
 router.get("/:id", authenticate, getAllConversations);
 
 module.exports = router;
